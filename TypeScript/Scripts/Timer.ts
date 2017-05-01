@@ -13,14 +13,14 @@
         seconds: number = 0;
         minutes: number = 0;
 
-        start(startButton: string, pauseButton: string, clearButton: string)
+        public  start(startButton: string, pauseButton: string, clearButton: string)
         {
-            document.getElementById(startButton).addEventListener("click", this.startTimer, false);
+            document.getElementById(startButton).addEventListener("click", this._startTimer, false);
             document.getElementById(pauseButton).addEventListener("click", this.pauseTimer, false);
             document.getElementById(clearButton).addEventListener("click", this.clearTimer, false);
 
         }
-        public startTimer = () =>
+        private _startTimer = () =>
         {
             if (this.timerId === -1)
             {
@@ -28,7 +28,7 @@
             }
 
         }
-        public displayTimer = () =>
+        private _displayTimer = () =>
         {
             document.getElementById('milliseconds').innerHTML = this.ms.toString();
             document.getElementById('seconds').innerHTML = this.seconds.toString();
@@ -47,9 +47,9 @@
             this.ms = 0;
             this.seconds = 0;
             this.minutes = 0;
-            this.displayTimer();
+            this._displayTimer();
         }
-        public changeColor()
+        private changeColor()
         {
             document.getElementById("body").style.backgroundColor = this.getRandomColor();
         }
@@ -59,7 +59,7 @@
             return `#${("000000" + hex.toString(16)).substr(-6)}`;
         }
 
-        public turnTimerOn()
+        private turnTimerOn()
         {
             this.ms += this.interval;
             if (this.ms >= 1000)
@@ -75,7 +75,7 @@
                 this.seconds = 0;
                 this.minutes += 1;
             }
-            this.displayTimer();
+            this._displayTimer();
         };
     }
 }

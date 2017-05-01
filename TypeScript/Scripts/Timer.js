@@ -12,12 +12,12 @@ var Timer;
             this.ms = 0;
             this.seconds = 0;
             this.minutes = 0;
-            this.startTimer = function () {
+            this._startTimer = function () {
                 if (_this.timerId === -1) {
                     _this.timerId = window.setInterval(_this.turnTimerOn.bind(_this), _this.interval);
                 }
             };
-            this.displayTimer = function () {
+            this._displayTimer = function () {
                 document.getElementById('milliseconds').innerHTML = _this.ms.toString();
                 document.getElementById('seconds').innerHTML = _this.seconds.toString();
                 document.getElementById('minutes').innerHTML = _this.minutes.toString();
@@ -31,11 +31,11 @@ var Timer;
                 _this.ms = 0;
                 _this.seconds = 0;
                 _this.minutes = 0;
-                _this.displayTimer();
+                _this._displayTimer();
             };
         }
         Timer.prototype.start = function (startButton, pauseButton, clearButton) {
-            document.getElementById(startButton).addEventListener("click", this.startTimer, false);
+            document.getElementById(startButton).addEventListener("click", this._startTimer, false);
             document.getElementById(pauseButton).addEventListener("click", this.pauseTimer, false);
             document.getElementById(clearButton).addEventListener("click", this.clearTimer, false);
         };
@@ -58,7 +58,7 @@ var Timer;
                 this.seconds = 0;
                 this.minutes += 1;
             }
-            this.displayTimer();
+            this._displayTimer();
         };
         ;
         return Timer;
