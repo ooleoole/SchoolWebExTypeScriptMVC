@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="/Css/TimerStyle.css" rel="stylesheet" type="text/css" />
+    <script src="/Scripts/Timer.js"></script>
+    <meta charset="utf-8"/>
+    <title>Timer</title>
+</head>
+<body id="body">
+    <h1 id="header">En liten timer gjorde i TypeScript</h1>
+    <div id="timerContainer">
+        <div id="timerSurface">
+            <div id="timerHeaders">
+                <div class="HeaderText NormalWidth">MIN</div>
+                <div class="HeaderText NormalWidth">SEC</div>
+                <div class="HeaderText WideWidth">MS</div>
+            </div>
+            <div id="timerNumbers">
+                <div id="minutes" class="TimerText NormalWidth"></div>
+                <div id="seconds" class="TimerText NormalWidth"></div>
+                <div id="milliseconds" class="TimerText WideWidth"></div>
+            </div>
+        </div>
+        <div id="buttonSurface">
+            <div id="startButton" class="Button ButtonStart"></div>
+            <div id="pauseButton" class="Button ButtonPause"></div>
+            <div id="clearButton" class="Button ButtonClear"></div>
+        </div>
+    </div>
+</body>
+</html>
