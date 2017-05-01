@@ -27,20 +27,18 @@
                 this.timerId = window.setInterval(this.turnTimerOn.bind(this), this.interval);
             }
 
-        }
+        };
         private _displayTimer = () =>
         {
             document.getElementById('milliseconds').innerHTML = this.ms.toString();
             document.getElementById('seconds').innerHTML = this.seconds.toString();
             document.getElementById('minutes').innerHTML = this.minutes.toString();
-        }
-
+        };
         public pauseTimer = () =>
         {
             window.clearInterval(this.timerId);
             this.timerId = -1;
-        }
-
+        };
         public clearTimer = () =>
         {
             this.pauseTimer();
@@ -48,7 +46,8 @@
             this.seconds = 0;
             this.minutes = 0;
             this._displayTimer();
-        }
+        };
+
         private changeColor()
         {
             document.getElementById("body").style.backgroundColor = this.getRandomColor();
