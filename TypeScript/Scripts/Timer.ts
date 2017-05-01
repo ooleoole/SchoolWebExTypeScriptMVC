@@ -13,7 +13,7 @@
         seconds: number = 0;
         minutes: number = 0;
 
-        public  start(startButton: string, pauseButton: string, clearButton: string)
+        public start(startButton: string, pauseButton: string, clearButton: string)
         {
             document.getElementById(startButton).addEventListener("click", this._startTimer, false);
             document.getElementById(pauseButton).addEventListener("click", this.pauseTimer, false);
